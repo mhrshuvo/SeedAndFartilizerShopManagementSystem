@@ -1,0 +1,47 @@
+[
+    {
+        "value": "S",
+        "meta": "s",
+        "attribute": "Size"
+    },
+    {
+        "value": "M",
+        "meta": "m",
+        "attribute": "Size"
+    },
+    {
+        "value": "L",
+        "meta": "l",
+        "attribute": "Size"
+    },
+    {
+        "value": "XL",
+        "meta": "xl",
+        "attribute": "Size"
+    },
+    {
+        "value": "Black",
+        "meta": "#000000",
+        "attribute": "Color"
+    },
+    {
+        "value": "Red",
+        "meta": "#FF0000",
+        "attribute": "Color"
+    },
+    {
+        "value": "Blue",
+        "meta": "#0000FF",
+        "attribute": "Color"
+    },
+    {
+        "value": "Green",
+        "meta": "#008000",
+        "attribute": "Color"
+    },
+     {
+        "value": "Yellow",
+        "meta": "#FFFF00",
+        "attribute": "Color"
+    }
+]

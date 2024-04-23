@@ -1,0 +1,164 @@
+[
+  {
+    "id": 1,
+    "name": "Women",
+    "slug": "women-wear"
+  },
+  {
+    "id": 2,
+    "name": "Men",
+    "slug": "men-wear"
+  },
+
+  {
+    "id": 4,
+    "name": "Pre-Loved",
+    "slug": "pre-loved"
+  },
+  {
+    "id": 7,
+    "name": "Rentals",
+    "slug": "rentals"
+  },
+  {
+    "id": 8,
+    "name": "Sale",
+    "slug": "sale"
+  },
+
+  {
+    "id": 9,
+    "name": "All Clothings",
+    "slug": "women-all-clothings"
+  },
+  {
+    "id": 10,
+    "name": "KP Originals",
+    "slug": "women-kp-originals"
+  },
+  {
+    "id": 11,
+    "name": "New Arrival",
+    "slug": "women-new-arrival"
+  },
+  {
+    "id": 12,
+    "name": "Suits Jackets",
+    "slug": "women-suits-jackets"
+  },
+  {
+    "id": 13,
+    "name": "Pants",
+    "slug": "women-pants"
+  },
+
+  {
+    "id": 16,
+    "name": "Pre-Loved",
+    "slug": "women-pre-loved"
+  },
+  {
+    "id": 17,
+    "name": "Rentals",
+    "slug": "women-rentals"
+  },
+  {
+    "id": 29,
+    "name": "Jump Suits",
+    "slug": "women-jump-suits"
+  },
+  {
+    "id": 30,
+    "name": "Tops",
+    "slug": "women-tops"
+  },
+  {
+    "id": 31,
+    "name": "Tees",
+    "slug": "women-tees"
+  },
+  {
+    "id": 32,
+    "name": "Shirts",
+    "slug": "women-shirts"
+  },
+  {
+    "id": 33,
+    "name": "Foundation",
+    "slug": "skincare-cosmetics-foundation"
+  },
+  {
+    "id": 34,
+    "name": "Eye Liner",
+    "slug": "skincare-cosmetics-eye-liner"
+  },
+  {
+    "id": 35,
+    "name": "lipstick",
+    "slug": "skincare-cosmetics-lipstick"
+  },
+  {
+    "id": 36,
+    "name": "sales & clearance",
+    "slug": "women-sales-clearance"
+  },
+
+  {
+    "id": 39,
+    "name": "Premium Beauty",
+    "slug": "skincare-cosmetics-premium-beauty"
+  },
+  {
+    "id": 40,
+    "name": "All Clothings",
+    "slug": "men-all-clothings"
+  },
+  {
+    "id": 41,
+    "name": "KP Originals",
+    "slug": "men-kp-originals"
+  },
+  {
+    "id": 42,
+    "name": "New Arrival",
+    "slug": "men-new-arrival"
+  },
+  {
+    "id": 43,
+    "name": "Suits Jackets",
+    "slug": "men-suits-jackets"
+  },
+  {
+    "id": 44,
+    "name": "Pants",
+    "slug": "men-pants"
+  },
+
+  {
+    "id": 46,
+    "name": "Pre-Loved",
+    "slug": "men-pre-loved"
+  },
+  {
+    "id": 47,
+    "name": "Rentals",
+    "slug": "men-rentals"
+  },
+
+  {
+    "id": 51,
+    "name": "Sweat Shirts",
+    "slug": "men-sweat-shirts"
+  },
+
+  {
+    "id": 57,
+    "name": "Sales Clearance",
+    "slug": "men-sales-clearance"
+  },
+  {
+    "id": 58,
+    "name": "Shirts",
+    "slug": "men-shirts"
+  }
+]
