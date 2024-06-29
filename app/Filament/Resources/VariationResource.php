@@ -36,37 +36,12 @@ class VariationResource extends Resource
                 Select::make('attribute')
                     ->options([
                         'Size' => 'Size',
-                        'Color' => 'Color'
                     ])
-                    ->native(false)
-                    ->required()
-                    ->reactive()
-                    ->default('Color'),
-                TextInput::make('meta')
-                    ->required()
-                    ->unique(column: 'meta')
-                    ->hidden(function (callable $get) {
-                        if ($get('attribute') == 'Size') {
-                            return false;
-                        } else {
-                            return true;
-                        }
-                    }),
-                ColorPicker::make('meta')
-                    ->required()
-                    ->unique(column: 'meta')
-                    ->hidden(function (callable $get) {
-                        if ($get('attribute') == 'Color') {
-                            return false;
-                        } else {
-                            return true;
-                        }
-                    }),
-
+                    ->required(),
                 TextInput::make('value')
                     ->unique(column: 'value')
                     ->required()
-                   
+
 
             ]);
     }
@@ -80,7 +55,6 @@ class VariationResource extends Resource
                 TextColumn::make('value'),
                 TextColumn::make('meta'),
                 ColorColumn::make('meta'),
-                    
             ])
             ->filters([
                 //

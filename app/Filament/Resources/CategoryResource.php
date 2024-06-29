@@ -38,40 +38,32 @@ class CategoryResource extends Resource
     {
         return $form
             ->schema([
-                Select::make('type')
-                ->label('Type')
+                Select::make('title')
+                    ->label('Title')
                     ->options([
-                        'man'=>'man',
-                        'women'=>'women',
-                        'skincare'=>'skincare',
-                        'co-ord-set'=>'co-ord-set',
+                        'Wet' => 'Wet',
+                        'Dry' => 'Dry',
+                        'Crystal' => 'Crystal',
+                        'Granular' => 'Granular',
+                        'Liquid' => 'Liquid',
+                        'Powder' => 'Powder',
+                        'Solid' => 'Solid',
+                        'Other' => 'Other',
                     ]),
-                TextInput::make('title')
-                    ->required()
-                    ->maxLength(255),
-                    // ->live(debounce: '1000')
-                    // ->afterStateUpdated(
-                    //     fn (
-                    //         Set $set,
-                    //         ?string $state
-                    //     ) =>
-                    //     $set('slug', Str::slug($state['gender'] . $state),
-                    //     )
-                    // ),
-                // TextInput::make('slug')
-                //     ->readonly()
-                //     ->required()
-                //     ->maxLength(255),
+                Select::make('type')
+                    ->label('Type')
+                    ->options([
+                        'Seed' => 'Seed',
+                        'Fertilizer' => 'Fertilizer',
+                        'Pesticide' => 'Pesticide',
+                        'Machinery' => 'Machinery',
+                        'Fungicide' => 'Fungicide',
+                        'Insecticide' => 'Insecticide',
+                        'Herbicide' => 'Herbicide',
+                        'Other' => 'Other',
+                    ]),
 
-                // FileUpload::make('icon')
-                //     ->disk('public')
-                //     ->directory('images/category')
-                //     ->image()
-                //     ->imageEditor()
-
-
-                    ]);
-
+            ]);
     }
 
     public static function table(Table $table): Table
@@ -80,14 +72,14 @@ class CategoryResource extends Resource
             ->columns([
                 // ImageColumn::make('icon'),
                 TextColumn::make('title')
-                ->searchable(),
+                    ->searchable(),
                 TextColumn::make('slug')
-                ->searchable(),
+                    ->searchable(),
                 SelectColumn::make('is_active')
-                ->options([
-                    0 => 'Inactive',
-                    1 => 'Active',
-                ])
+                    ->options([
+                        0 => 'Inactive',
+                        1 => 'Active',
+                    ])
 
             ])
             ->filters([

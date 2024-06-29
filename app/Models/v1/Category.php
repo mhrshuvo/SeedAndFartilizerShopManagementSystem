@@ -11,14 +11,11 @@ class Category extends Model
     use HasFactory;
 
     protected $fillable = [
-
         'title',
         'slug',
         'type',
         'is_active'
     ];
-
-
 
     public function products()
     {
@@ -29,6 +26,7 @@ class Category extends Model
         parent::boot();
         static::creating(function ($category) {
 
+            $category->title =  ( $category->title . ' ' . $category->type);
             if (empty($category->slug)) {
                 $category->slug = $category->type . '-' . Str::slug($category->title);
             }
