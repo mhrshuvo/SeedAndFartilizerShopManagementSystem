@@ -128,10 +128,10 @@
                                                 class="col">
                                                 <tbody>
                                                     <tr>
-                                                        <td align="left"> <img
+                                                        {{-- <td align="left"> <img
                                                                 src="{{ asset('asset/image/ki-porbo-logo_Black_Final.png') }}"
                                                                 width="180" height="80" alt="logo"
-                                                                border="0" /></td>
+                                                                border="0" /></td> --}}
                                                     </tr>
                                                     <tr class="hiddenMobile">
                                                         <td height="40"></td>
@@ -226,10 +226,10 @@
                                                     align="left">
                                                     Size
                                                 </th>
-                                                <th style="font-size: 22px; font-family: 'Open Sans', sans-serif; color: #5b5b5b; font-weight: normal; line-height: 1; vertical-align: top; padding: 0 0 7px;"
+                                                {{-- <th style="font-size: 22px; font-family: 'Open Sans', sans-serif; color: #5b5b5b; font-weight: normal; line-height: 1; vertical-align: top; padding: 0 0 7px;"
                                                     align="left">
                                                     Color
-                                                </th>
+                                                </th> --}}
                                                 <th style="font-size: 22px; font-family: 'Open Sans', sans-serif; color: #5b5b5b; font-weight: normal; line-height: 1; vertical-align: top; padding: 0 0 7px;"
                                                     align="center">
                                                     Quantity
@@ -259,9 +259,9 @@
                                                     <td
                                                         style="font-size: 22px; font-family: 'Open Sans', sans-serif; color: #646a6e;  line-height: 18px;  vertical-align: top; padding:10px 0;">
                                                         {{ $product->size }}</td>
-                                                    <td
+                                                    {{-- <td
                                                         style="font-size: 22px; font-family: 'Open Sans', sans-serif; color: #646a6e;  line-height: 18px;  vertical-align: top; padding:10px 0;">
-                                                        {{ $product->color }}</td>
+                                                        {{ $product->color }}</td> --}}
                                                     <td style="font-size: 22px; font-family: 'Open Sans', sans-serif; color: #646a6e;  line-height: 18px;  vertical-align: top; padding:10px 0;"
                                                         align="center">{{ $product->qty }}</td>
                                                     <td style="font-size: 22px; font-family: 'Open Sans', sans-serif; color: #1e2b33;  line-height: 18px;  vertical-align: top; padding:10px 0;"

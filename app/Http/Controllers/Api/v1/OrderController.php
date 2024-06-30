@@ -118,13 +118,13 @@ class OrderController extends Controller
 
         }
 
-        $url = 'http://bulksmsbd.net/api/smsapi?api_key=r8YHEDHLddKtxsLlziw1&type=text&number=' . $input['contact_no'] . '&senderid=8809617615316&message=' . 'Your order ' . $input['tracking_id'] . " is received. We'll confirm after a call. For assistance, call 01810098953. Thank you for shopping with KiPorbo";
-        if (!config('app.debug')) {
-            Http::get($url);
-        }
-        if (!empty(Auth()->user()->email)) {
-            dispatch(new SendInvoice(Auth()->user()->email, $order));
-        }
+        // $url = 'http://bulksmsbd.net/api/smsapi?api_key=r8YHEDHLddKtxsLlziw1&type=text&number=' . $input['contact_no'] . '&senderid=8809617615316&message=' . 'Your order ' . $input['tracking_id'] . " is received. We'll confirm after a call. For assistance, call 01810098953. Thank you for shopping with KiPorbo";
+        // if (!config('app.debug')) {
+        //     Http::get($url);
+        // }
+        // if (!empty(Auth()->user()->email)) {
+        //     dispatch(new SendInvoice(Auth()->user()->email, $order));
+        // }
         return OrderResource::make($order->load('order_products'));
     }
 
