@@ -112,7 +112,6 @@ class OrderController extends Controller
 
                 $productDetails->first()->variation()->where('value', $request->{"product"}[$i]["size"])->update([
                     'quantity' => $productDetails->first()->variation()->where('value', $request->{"product"}[$i]["size"])->first()->pivot->quantity - $request->{"product"}[$i]["qty"]
-
                 ]);
             }
 

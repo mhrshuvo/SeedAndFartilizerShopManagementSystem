@@ -34,7 +34,7 @@ class ProductResource extends JsonResource
             'image' => $this->image,
             'gallery' => $collection,
             'variations' => VariationResource::collection($this->variation),
-            'company' => $this->company->id  ==  1 ? '' : $this->company->name,
+            //'company' => $this->company->id  ==  1 ? '' : $this->company->name,
         ];
     }
 }
