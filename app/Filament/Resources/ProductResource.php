@@ -47,7 +47,7 @@ class ProductResource extends Resource
             ->schema([
                 TextInput::make('sku')
                     ->label('SKU')
-                    ->default(fn () => Product::generateSKU())
+                    ->default(fn() => Product::generateSKU())
                     ->required()
                     ->maxLength(255),
 
@@ -80,23 +80,29 @@ class ProductResource extends Resource
                     ->maxLength(255),
                 TextInput::make('stock')
                     ->numeric(),
-                Fieldset::make('Product Image')
-                    ->relationship('image')
-                    ->schema([
-                        FileUpload::make('original')
+                FileUpload::make('thumbnail')
+                    ->disk('public')
+                    ->directory('images/product')
+                    ->image()
+                    ->imageEditor()
+                    ->required(),
+                // Fieldset::make('Product Image')
+                //     ->relationship('image')
+                //     ->schema([
+                //         FileUpload::make('original')
 
-                            ->disk('public')
-                            ->directory('images/product')
-                            ->image()
-                            ->imageEditor()
-                            ->required(),
-                        FileUpload::make('thumbnail')
-                            ->disk('public')
-                            ->directory('images/product')
-                            ->image()
-                            ->imageEditor()
-                            ->required(),
-                    ]),
+                //             ->disk('public')
+                //             ->directory('images/product')
+                //             ->image()
+                //             ->imageEditor()
+                //             ->required(),
+                //         FileUpload::make('thumbnail')
+                //             ->disk('public')
+                //             ->directory('images/product')
+                //             ->image()
+                //             ->imageEditor()
+                //             ->required(),
+                //     ]),
                 // Fieldset::make('Product Gallery')
                 //     ->relationship('gallery')
                 //     ->schema([
@@ -112,7 +118,7 @@ class ProductResource extends Resource
                     [
                         Select::make('categories')
                             ->relationship('categories', 'slug')
-                             
+
                             ->multiple()
                             ->preload()
                     ]
@@ -139,7 +145,7 @@ class ProductResource extends Resource
                 TextColumn::make('sku')
                     ->label('SKU')
                     ->searchable(),
-                ImageColumn::make('image.original')
+                ImageColumn::make('thumbnail')
                     ->label('Image')
                     ->circular(),
                 TextColumn::make('name')

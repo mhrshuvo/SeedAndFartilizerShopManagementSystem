@@ -39,6 +39,7 @@ class ListProducts extends ListRecords
     public function getTabs(): array
     {
         return [
+            
             'All' => Tab::make('All')
                 ->modifyQueryUsing(function ($query) {
                     $query->latest();
@@ -55,7 +56,6 @@ class ListProducts extends ListRecords
                     $query->where('active', 0)
                         ->latest();
                 }),
-
         ];
     }
 }

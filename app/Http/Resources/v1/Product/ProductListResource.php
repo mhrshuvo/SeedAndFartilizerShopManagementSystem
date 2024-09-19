@@ -21,7 +21,10 @@ class ProductListResource extends JsonResource
             'sell_price' => floatval($this->sell_price),
             'stock' => $this->stock,
             'slug' => $this->slug,
-            'image'=> $this->image,
+            'image'=> [
+                'thumbnail' => $this->thumbnail,
+                'original' => $this->thumbnail,
+            ],
         ];
     }
 }

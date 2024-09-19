@@ -31,7 +31,10 @@ class ProductResource extends JsonResource
             'sell_price' => floatval($this->sell_price),
             'slug' => $this->slug,
             'stock' => intval($this->stock),
-            'image' => $this->image,
+            'image'=> [
+                'thumbnail' => $this->thumbnail,
+                'original' => $this->thumbnail,
+            ],
             // 'gallery' => $collection,
             'variations' => VariationResource::collection($this->variation),
             //'company' => $this->company->id  ==  1 ? '' : $this->company->name,

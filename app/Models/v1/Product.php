@@ -33,7 +33,8 @@ class Product extends Model
         'stock',
         'active',
         'user_id',
-       // 'serial'
+       // 'serial',
+       'thumbnail',
 
     ];
     protected $hidden = [
