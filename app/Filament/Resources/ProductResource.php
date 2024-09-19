@@ -97,17 +97,17 @@ class ProductResource extends Resource
                             ->imageEditor()
                             ->required(),
                     ]),
-                Fieldset::make('Product Gallery')
-                    ->relationship('gallery')
-                    ->schema([
-                        FileUpload::make('original')
-                            ->multiple()
-                            ->disk('public')
-                            ->directory('images/product')
-                            ->image()
-                            ->imageEditor()
-                            ->required(),
-                    ]),
+                // Fieldset::make('Product Gallery')
+                //     ->relationship('gallery')
+                //     ->schema([
+                //         FileUpload::make('original')
+                //             ->multiple()
+                //             ->disk('public')
+                //             ->directory('images/product')
+                //             ->image()
+                //             ->imageEditor()
+                //             ->required(),
+                //     ]),
                 Section::make('Categories')->schema(
                     [
                         Select::make('categories')

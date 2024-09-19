@@ -18,6 +18,8 @@ class OrderResource extends JsonResource
     {
        
         return [
+            'id' => $this->id,
+            'bkash_url' => $this->bkash_url,
             'tracking_id'=>$this->tracking_id,
             'contact_no'=>$this->contact_no,
             'district' => District::where('id',$this->district_id)->get('name')->implode('name',''),

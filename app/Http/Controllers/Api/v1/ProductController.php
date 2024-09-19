@@ -67,7 +67,7 @@ class ProductController extends Controller
                     [
                         'categories',
                         'image',
-                        'gallery',
+                        // 'gallery',
                         'variation',
                         'company'
                     ]

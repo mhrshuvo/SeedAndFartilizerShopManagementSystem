@@ -148,7 +148,7 @@ class AuthController extends Controller
         ]);
         if ($validator->fails()) {
             $otp = rand(100000, 999999);
-            $url = 'http://bulksmsbd.net/api/smsapi?api_key=r8YHEDHLddKtxsLlziw1&type=text&number=' . $request->phone_no . '&senderid=8809617615316&message=' . 'Your kiPorbo login OTP is ' . $otp . ' Please do not share this with anyone. Thank you.';
+            $url = 'http://bulksmsbd.net/api/smsapi?api_key=r8YHEDHLddKtxsLlziw1&type=text&number=' . $request->phone_no . '&senderid=8809617615316&message=' . 'Your S&f shop login OTP is ' . $otp . ' Please do not share this with anyone. Thank you.';
             if (!config('app.debug')) {
                 $response =  Http::get($url);
             } else {
@@ -174,7 +174,7 @@ class AuthController extends Controller
             );
         } else {
             $otp = rand(100000, 999999);
-            $url = 'http://bulksmsbd.net/api/smsapi?api_key=r8YHEDHLddKtxsLlziw1&type=text&number=' . $request->phone_no . '&senderid=8809617615316&message=' . 'Your kiPorbo login OTP is ' . $otp . ' Please do not share this with anyone. Thank you.';
+            $url = 'http://bulksmsbd.net/api/smsapi?api_key=r8YHEDHLddKtxsLlziw1&type=text&number=' . $request->phone_no . '&senderid=8809617615316&message=' . 'Your S&f shop login OTP is ' . $otp . ' Please do not share this with anyone. Thank you.';
             if (!config('app.debug')) {
                 $response =  Http::get($url);
                 //dd($response->status());

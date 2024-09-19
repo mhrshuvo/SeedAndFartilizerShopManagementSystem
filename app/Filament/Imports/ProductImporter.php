@@ -18,13 +18,10 @@ class ProductImporter extends Importer
                 ->requiredMapping(),
             ImportColumn::make('name')
                 ->requiredMapping(),
-
             ImportColumn::make('description')
-
                 ->requiredMapping(),
             ImportColumn::make('stock')
                 ->numeric(),
-
             ImportColumn::make('price')
                 ->numeric()
                 ->rules(['numeric', 'min:0']),
@@ -36,11 +33,7 @@ class ProductImporter extends Importer
 
     public function resolveRecord(): ?Product
     {
-        // return Product::firstOrNew([
-        //     // Update existing records, matching them by `$this->data['column_name']`
-        //     'email' => $this->data['email'],
-        // ]);
-
+       
         return new Product();
     }
 

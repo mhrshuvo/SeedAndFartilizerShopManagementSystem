@@ -14,14 +14,14 @@ class ProductResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $collection = [];
-        for ($i = 0; $i < count($this->gallery->original); $i++) {
-            $collection[] = [
-                "id" => $i + 1,
-                "thumbnail" => $this->gallery->original[$i],
-                "original" => $this->gallery->original[$i],
-            ];
-        }
+        // $collection = [];
+        // for ($i = 0; $i < count($this->gallery->original); $i++) {
+        //     $collection[] = [
+        //         "id" => $i + 1,
+        //         "thumbnail" => $this->gallery->original[$i],
+        //         "original" => $this->gallery->original[$i],
+        //     ];
+        // }
 
         return [
             'id' => $this->sku,
@@ -32,7 +32,7 @@ class ProductResource extends JsonResource
             'slug' => $this->slug,
             'stock' => intval($this->stock),
             'image' => $this->image,
-            'gallery' => $collection,
+            // 'gallery' => $collection,
             'variations' => VariationResource::collection($this->variation),
             //'company' => $this->company->id  ==  1 ? '' : $this->company->name,
         ];

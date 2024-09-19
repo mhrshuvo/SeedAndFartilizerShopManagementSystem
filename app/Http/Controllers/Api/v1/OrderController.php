@@ -17,6 +17,7 @@ use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
+use Karim007\LaravelBkashTokenize\Facade\BkashPaymentTokenize;
 
 class OrderController extends Controller
 {
@@ -37,7 +38,7 @@ class OrderController extends Controller
         $input['tracking_id'] =  substr(Str::uuid(), 4, 9) . Carbon::now()->format('s');
         if (!empty(Auth()->user()->id)) {
             $input['user_id'] = Auth()->user()->id;
-        }else{
+        } else {
             return response()->json(
                 [
                     'message' => 'user not found',
@@ -70,17 +71,15 @@ class OrderController extends Controller
                 }
 
 
-                if($coupon->used_by == null){
+                if ($coupon->used_by == null) {
                     $coupon->used_by = [Auth()->user()->id];
-                }
-                else{
+                } else {
                     $coupon->used_by = array_merge(json_decode($coupon->used_by), [Auth()->user()->id]);
                 }
                 $coupon->update([
                     'used' => $coupon->used + 1,
                     'used_by' => $coupon->used_by
                 ]);
-
             }
         }
 
@@ -107,14 +106,13 @@ class OrderController extends Controller
             $productDetails->first()->update([
                 'stock' => $productDetails->first()->stock - $request->{"product"}[$i]["qty"]
             ]);
-            if($request->{"product"}[$i]["size"] != null){
+            if ($request->{"product"}[$i]["size"] != null) {
 
 
                 $productDetails->first()->variation()->where('value', $request->{"product"}[$i]["size"])->update([
                     'quantity' => $productDetails->first()->variation()->where('value', $request->{"product"}[$i]["size"])->first()->pivot->quantity - $request->{"product"}[$i]["qty"]
                 ]);
             }
-
         }
 
         // $url = 'http://bulksmsbd.net/api/smsapi?api_key=r8YHEDHLddKtxsLlziw1&type=text&number=' . $input['contact_no'] . '&senderid=8809617615316&message=' . 'Your order ' . $input['tracking_id'] . " is received. We'll confirm after a call. For assistance, call 01810098953. Thank you for shopping with KiPorbo";
@@ -124,6 +122,19 @@ class OrderController extends Controller
         // if (!empty(Auth()->user()->email)) {
         //     dispatch(new SendInvoice(Auth()->user()->email, $order));
         // }
+        $inv = uniqid();
+        $request['intent'] = 'sale';
+        $request['mode'] = '0011'; //0011 for checkout
+        $request['payerReference'] = $inv;
+        $request['currency'] = 'BDT';
+        $request['amount'] = $order->total_price;
+        $request['merchantInvoiceNumber'] = $inv;
+        $url =  config("bkash.callbackURL");
+        $request['callbackURL'] = $url;
+        $request_data_json = json_encode($request->all());
+        $response =  BkashPaymentTokenize::cPayment($request_data_json);
+        //add data to the call back url 
+        $order->bkash_url = $response['bkashURL'];
         return OrderResource::make($order->load('order_products'));
     }
 
