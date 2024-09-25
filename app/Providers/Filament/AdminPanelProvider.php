@@ -30,7 +30,12 @@ class AdminPanelProvider extends PanelProvider
             ->path('manage/admin')
             ->login()
             ->colors([
-                'primary' => Color::Green,
+                'danger' => Color::Rose,
+                'gray' => Color::Gray,
+                'info' => Color::Blue,
+                'primary' => Color::Indigo,
+                'success' => Color::Emerald,
+                'warning' => Color::Orange,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
@@ -56,6 +61,10 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->spa();
+           
+            ->brandLogo('https://www.deshifarmer.co/img/agro-tech.png')
+            ->brandLogoHeight('120px')
+          
+           ;
     }
 }
